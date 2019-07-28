@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
+set(GAME_NAME App)
 #project name
-project(${PROJECT_NAME})
+project(${GAME_NAME})
 
 #指定c++版本
 add_definitions(-std=c++17)
@@ -23,7 +24,7 @@ INCLUDE_DIRECTORIES(
 #add c/cc/cpp files
 file(GLOB_RECURSE APP_SOURCES "app/*.cpp" "app/core/*.cpp" "app/helpers/*.cpp" "app/sys/*.cpp" "app/utils/*.cpp")
 #add executable file
-ADD_EXECUTABLE(${PROJECT_NAME} ${APP_SOURCES})
+ADD_EXECUTABLE(${GAME_NAME} ${APP_SOURCES})
 
 #find boost
 find_package(Boost REQUIRED COMPONENTS
@@ -38,5 +39,5 @@ include_directories(${Boost_INCLUDE_DIRS})
 #message("${Boost_LIBRARIES}")
 
 #find gf
-include_directories(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/module/gf/include)
-target_link_libraries(${PROJECT_NAME} ${PROJECT_SOURCE_DIR}/module/gf-lib/library/libgf0.dylib ${PROJECT_SOURCE_DIR}/module/gf-lib/library/libgfcore0.dylib)
+include_directories(${GAME_NAME} ${PROJECT_SOURCE_DIR}/module/gf/include)
+target_link_libraries(${GAME_NAME} ${PROJECT_SOURCE_DIR}/module/gf-lib/library/libgf0.dylib ${PROJECT_SOURCE_DIR}/module/gf-lib/library/libgfcore0.dylib)
