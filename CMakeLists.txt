@@ -22,7 +22,7 @@ INCLUDE_DIRECTORIES(
 )
 
 #add c/cc/cpp files
-file(GLOB_RECURSE APP_SOURCES "*.cpp" "core/*.cpp" "helpers/*.cpp" "sys/*.cpp" "utils/*.cpp")
+file(GLOB_RECURSE APP_SOURCES "app/main.cpp" "app/core/*.cpp" "app/helpers/*.cpp" "app/sys/*.cpp" "app/utils/*.cpp")
 #add executable file
 ADD_EXECUTABLE(${GAME_NAME} ${APP_SOURCES})
 
