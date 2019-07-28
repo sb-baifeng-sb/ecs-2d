@@ -1,0 +1,9 @@
+[submodule "module/cute_headers"]
+	path = module/cute_headers
+	url = https://github.com/RandyGaul/cute_headers.git
+[submodule "module/entt"]
+	path = module/entt
+	url = https://github.com/skypjack/entt.git
+[submodule "module/gf"]
+	path = module/gf
+	url = https://github.com/GamedevFramework/gf.git

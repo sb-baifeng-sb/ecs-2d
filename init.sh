@@ -1,2 +1,4 @@
-mkdir app/core app/helpers app/struct app/sys app/utils
+mkdir assets app/core app/helpers app/struct app/sys app/utils
+git submodule update --init
+cd module/gf
 git submodule update --init
