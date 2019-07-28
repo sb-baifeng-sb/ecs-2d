@@ -1,0 +1,11 @@
+if [ "$1" = "-all" ]; then
+    mkdir module/gf-lib
+    cd module/gf-lib
+    cmake ../gf
+    make
+    cd ../..
+fi
+mkdir build
+cd build
+cmake ..
+make
