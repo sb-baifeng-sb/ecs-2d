@@ -5,10 +5,9 @@
 
 #### 使用说明
 
-1. brew install sdl2 (Linux: sudo apt install sdl2)
-2. brew install boost (Linux: sudo apt install boost)
-3. sh init.sh (首次运行时使用，下载相关依赖库，时间较长)
-4. sh build.sh (首次运行需使用: sh build.sh -all)
+1. brew install sfml (Linux: sudo apt install libsfml-dev)
+3. sh init.sh (首次运行时使用)
+4. sh build.sh
 5. sh run.sh
 
 #### 其他

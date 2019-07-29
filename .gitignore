@@ -1,2 +1,3 @@
 build
-module/gf-lib
+cmake-build-debug
+.idea

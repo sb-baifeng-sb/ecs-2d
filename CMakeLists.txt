@@ -7,10 +7,10 @@ project(${GAME_NAME})
 #指定c++版本
 add_definitions(-std=c++17)
 
-#source directory
-AUX_SOURCE_DIRECTORY(app DIR_SRCS)
+# Add directory containing FindSFML.cmake to module path
+set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}")
 
-#copy resource to ./
+#copy assets to ./
 file(COPY assets DESTINATION .)
 
 #head file path
@@ -18,26 +18,23 @@ INCLUDE_DIRECTORIES(
         app
         module/entt/src
         module/cute_headers
-        module/gf/include
 )
 
 #add c/cc/cpp files
 file(GLOB_RECURSE APP_SOURCES "app/main.cpp" "app/core/*.cpp" "app/helpers/*.cpp" "app/sys/*.cpp" "app/utils/*.cpp")
+
 #add executable file
 ADD_EXECUTABLE(${GAME_NAME} ${APP_SOURCES})
 
-#find boost
-find_package(Boost REQUIRED COMPONENTS
-        filesystem
-        )
-if(NOT Boost_FOUND)
-    message("Not found Boost")
+#find sfml
+find_package(SFML 2 COMPONENTS graphics window audio system)
+if(SFML_FOUND)
+        include_directories(${SFML_INCLUDE_DIR})
+else()
+        set(SFML_ROOT "" CACHE PATH "SFML top-level directory")
+        message("\n-> SFML directory not found. Set SFML_ROOT to SFML's top-level path (containing \"include\" and \"lib\" directories).")
+        message("-> Make sure the SFML libraries with the same configuration (Release/Debug, Static/Dynamic) exist.\n")
 endif()
 
-include_directories(${Boost_INCLUDE_DIRS})
-#message("${Boost_INCLUDE_DIRS}")
-#message("${Boost_LIBRARIES}")
-
-#find gf
-include_directories(${GAME_NAME} ${PROJECT_SOURCE_DIR}/module/gf/include)
-target_link_libraries(${GAME_NAME} ${PROJECT_SOURCE_DIR}/module/gf-lib/library/libgf0.dylib ${PROJECT_SOURCE_DIR}/module/gf-lib/library/libgfcore0.dylib)
+#link library
+target_link_libraries(${GAME_NAME} ${SFML_LIBRARIES})
