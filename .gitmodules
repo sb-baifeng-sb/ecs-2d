@@ -4,3 +4,6 @@
 [submodule "module/model-worker"]
 	path = module/model-worker
 	url = https://github.com/sb-baifeng-sb/model-worker.git
+[submodule "module/tmxlite"]
+	path = module/tmxlite
+	url = https://github.com/fallahn/tmxlite.git

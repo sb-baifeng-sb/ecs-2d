@@ -4,6 +4,7 @@
 #include <cmath>
 #include <ctime>
 #include <cstdlib>
+#include <tmxlite/Map.hpp>
 
 #ifdef SFML_SYSTEM_IOS
 #include <SFML/Main.hpp>

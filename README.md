@@ -5,11 +5,13 @@
 
 #### 使用说明
 
-1. brew install sfml (Linux: sudo apt install libsfml-dev)
-2. git clone --recursive https://github.com/sb-baifeng-sb/ecs-2d.git
-3. cd ecs-2d
-4. mkdir build
-5. cd build
-6. cmake ..
-7. make
-8. ./App
+```
+brew install sfml (Linux: sudo apt install libsfml-dev)
+git clone --recursive https://github.com/sb-baifeng-sb/ecs-2d.git
+cd ecs-2d
+mkdir build
+cd build
+cmake ..
+make
+./App
+```
