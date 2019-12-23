@@ -5,7 +5,7 @@ set(GAME_NAME App)
 project(${GAME_NAME})
 
 #指定c++版本
-add_definitions(-std=c++17)
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 
 # Add directory containing FindSFML.cmake to module path
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake;${CMAKE_MODULE_PATH};${CMAKE_SOURCE_DIR}")
@@ -17,11 +17,14 @@ file(COPY assets DESTINATION .)
 INCLUDE_DIRECTORIES(
         app
         module/entt/src
-        module/cute_headers
+        module/model-worker
 )
 
 #add c/cc/cpp files
-file(GLOB_RECURSE APP_SOURCES "app/main.cpp" "app/core/*.cpp" "app/helpers/*.cpp" "app/sys/*.cpp" "app/utils/*.cpp")
+file(GLOB_RECURSE APP_SOURCES
+    app/*.c*
+    module/model-worker/source/*.c*
+)
 
 #add executable file
 ADD_EXECUTABLE(${GAME_NAME} ${APP_SOURCES})

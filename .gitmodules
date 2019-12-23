@@ -1,6 +1,6 @@
-[submodule "module/cute_headers"]
-	path = module/cute_headers
-	url = https://github.com/RandyGaul/cute_headers.git
 [submodule "module/entt"]
 	path = module/entt
 	url = https://github.com/skypjack/entt.git
+[submodule "module/model-worker"]
+	path = module/model-worker
+	url = https://github.com/sb-baifeng-sb/model-worker.git
