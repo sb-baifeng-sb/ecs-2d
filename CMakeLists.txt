@@ -18,15 +18,12 @@ INCLUDE_DIRECTORIES(
         app
         module/entt/src
         module/model-worker
-        module/tmxlite/tmxlite/include
 )
 
 #add c/cc/cpp files
 file(GLOB_RECURSE APP_SOURCES
     app/*.c*
     module/model-worker/source/*.c*
-    module/tmxlite/tmxlite/src/*.c*
-    module/tmxlite/tmxlite/src/detail/*.c*
 )
 
 #add executable file
